@@ -6,13 +6,13 @@
 /*   By: anunes-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:37:00 by anunes-d          #+#    #+#             */
-/*   Updated: 2021/03/04 16:51:27 by anunes-d         ###   ########.fr       */
+/*   Updated: 2021/03/04 21:40:43 by anunes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memcpy(void *restrict dest, const void *restrict src, size_t n)
+void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
 {
 	size_t	i;
 	char	*tdest;
