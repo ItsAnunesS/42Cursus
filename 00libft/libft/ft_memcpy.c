@@ -5,26 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anunes-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/22 14:47:14 by anunes-d          #+#    #+#             */
-/*   Updated: 2021/02/22 15:57:20 by anunes-d         ###   ########.fr       */
+/*   Created: 2021/03/04 15:37:00 by anunes-d          #+#    #+#             */
+/*   Updated: 2021/03/04 16:51:27 by anunes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*memcpy(void *restrict dest, const void *restrict src, size_t n)
 {
 	size_t	i;
-	char	*csrc;
-	char	*cdest;
+	char	*tdest;
+	char	*tsrc;
 
 	i = 0;
-	csrc = (char *)src;
-	cdest = (char *)dest;
-	while (i < n)
-	{
-		cdest[i] = csrc[i];
-		i++;
-	}
-	return (cdest);
+	tdest = (unsigned char*)dest;
+	tsrc = (unsigned char*)src;
+	if (!dest && !src)
+		return (0);
+	while (i++ < n)
+		tdest[i] = tsrc[i];
+	return (dest);
 }
