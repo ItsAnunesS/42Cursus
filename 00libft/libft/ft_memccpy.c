@@ -6,7 +6,7 @@
 /*   By: anunes-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 16:24:21 by anunes-d          #+#    #+#             */
-/*   Updated: 2021/03/04 18:16:54 by anunes-d         ###   ########.fr       */
+/*   Updated: 2021/03/05 00:24:54 by anunes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src,
 	char	*tsrc;
 
 	i = 0;
-	tdest = (char *)dest;
+	tdest = (char *)dst;
 	tsrc = (char *)src;
 	while (i++ < n)
 	{
 		tdest[i] = tsrc[i];
-		if ((unsigned char)tsrc[i] == (unsigned char)c[i])
-			return ((char *)dest + i + 1);
+		if ((unsigned char)tsrc[i] == (unsigned char)c)
+			return ((char *)dst + i + 1);
 	}
 	return (NULL);
 }
