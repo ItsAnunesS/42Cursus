@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"random": "c",
+		"hash_map": "c",
+		"bitset": "c",
+		"chrono": "c",
+		"algorithm": "c"
+	}
+}
