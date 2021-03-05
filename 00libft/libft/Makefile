@@ -6,13 +6,13 @@
 #    By: anunes-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/22 16:47:01 by anunes-d          #+#    #+#              #
-#    Updated: 2021/02/22 16:47:07 by anunes-d         ###   ########.fr        #
+#    Updated: 2021/03/05 04:29:10 by anunes-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-.PHONY: $(NAME) all clean fclean re 
+.PHONY: $(NAME) all clean fclean re
 
 CC = gcc
 CCFLAGS = -Wall -Wextra -Werror
@@ -23,13 +23,16 @@ OBJS = $(SRCS:.c=.o)
 
 all:	$(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CCFLAGS) -o $(NAME) $(SRCS) -I $(HDR)
+$(NAME):	$(OBJS) $(HDR)
+	$(CC) $(CCFLAGS) -o $(NAME) $(SRCS) $(HDR)
+
+.c.o:
+	$(RM) $(OBJS) $(BONUS_O)
 
 clean:
 	$(RM) $(OBJS)
 
-fclean: clean
+fclean:	clean
 	$(RM) $(NAME)
 
-re: fclean all
+re:	fclean all
