@@ -3,36 +3,42 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anunes-d <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: anunes-d <anunes-d@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/02/22 16:47:01 by anunes-d          #+#    #+#              #
-#    Updated: 2021/03/05 04:29:10 by anunes-d         ###   ########.fr        #
+#    Created: 2021/03/05 17:06:26 by anunes-d          #+#    #+#              #
+#    Updated: 2021/03/05 17:15:55 by anunes-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+CC          = gcc
+CFLAGS      = -Wall -Wextra -Werror
+RM          = rm -f
+NAME        = libft.a
+INCLUDE     = libft.h
 
-.PHONY: $(NAME) all clean fclean re
+SRCS        =	ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
+                ft_isascii.c ft_isdigit.c ft_isprint.c ft_memccpy.c \
+                ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c \
+                ft_memset.c ft_strchr.c ft_strdup.c ft_strlcat.c \
+                ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c \
+                ft_strrchr.c ft_tolower.c ft_toupper.c ft_atoi.c
 
-CC = gcc
-CCFLAGS = -Wall -Wextra -Werror
-RM = rm -f
-HDR = libft.h
-SRCS = $(wildcard *.c)
-OBJS = $(SRCS:.c=.o)
+OBJS        = $(SRCS:.c=.o)
 
-all:	$(NAME)
+all:		$(NAME)
 
-$(NAME):	$(OBJS) $(HDR)
-	$(CC) $(CCFLAGS) -o $(NAME) $(SRCS) $(HDR)
+$(NAME):    $(OBJS) $(INCLUDE)
+			ar -rcs $(NAME) $(OBJS)
+			ranlib  $(NAME)
 
 .c.o:
-	$(RM) $(OBJS) $(BONUS_O)
+			$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $(<:.c=.o)
 
 clean:
-	$(RM) $(OBJS)
+			$(RM) $(OBJS)
 
-fclean:	clean
-	$(RM) $(NAME)
+fclean:		clean
+			$(RM) $(NAME)
+re:			fclean all
 
-re:	fclean all
+.PHONY:		all clean fclean re

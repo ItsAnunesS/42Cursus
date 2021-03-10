@@ -6,13 +6,13 @@
 /*   By: anunes-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 03:35:17 by anunes-d          #+#    #+#             */
-/*   Updated: 2021/03/05 04:17:34 by anunes-d         ###   ########.fr       */
+/*   Updated: 2021/03/05 20:24:57 by anunes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int	c)
+int	ft_isalpha(int c)
 {
 	if ((c > 64 && c < 91) || (c > 96 && c < 123))
 		return (1);

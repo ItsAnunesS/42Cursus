@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anunes-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: anunes-d <anunes-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 00:51:11 by anunes-d          #+#    #+#             */
-/*   Updated: 2021/03/05 01:02:15 by anunes-d         ###   ########.fr       */
+/*   Updated: 2021/03/05 17:42:54 by anunes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	j;
 
 	i = 0;
+	if (!*little)
+		return ((char *)big);
 	while (i < len && big[i] != '\0')
 	{
 		j = 0;

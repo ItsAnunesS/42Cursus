@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anunes-d <anunes-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anunes-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/05 00:26:07 by anunes-d          #+#    #+#             */
-/*   Updated: 2021/03/05 18:07:32 by anunes-d         ###   ########.fr       */
+/*   Created: 2021/03/05 19:26:28 by anunes-d          #+#    #+#             */
+/*   Updated: 2021/03/05 19:33:25 by anunes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char tmp;
-
-	tmp = c;
-	while (*s && *s != tmp)
-		++s;
-	return (char *)(tmp == (unsigned char)*s ? s : NULL);
+    unsigned int    i;
 }
