@@ -6,7 +6,7 @@
 /*   By: anunes-d <anunes-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 21:26:09 by anunes-d          #+#    #+#             */
-/*   Updated: 2021/03/05 17:52:26 by anunes-d         ###   ########.fr       */
+/*   Updated: 2021/03/11 17:16:23 by anunes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*str1;
 	unsigned char	*str2;
 

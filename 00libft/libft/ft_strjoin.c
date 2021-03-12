@@ -1,38 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anunes-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/05 19:26:28 by anunes-d          #+#    #+#             */
-/*   Updated: 2021/03/12 17:49:29 by anunes-d         ###   ########.fr       */
+/*   Created: 2021/03/11 18:21:45 by anunes-d          #+#    #+#             */
+/*   Updated: 2021/03/12 17:14:49 by anunes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
-	char	*sub;
+	char	*joinstr;
 
-	i = 0;
-	if (!s)
+	joinstr = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!s1 || (!s1 && !s2))
 		return (NULL);
-	if (start >= ft_strlen(s))
-	{
-		sub = malloc(sizeof(char));
-		*sub = '\0';
-		return (sub);
-	}
-	if (ft_strlen(s) < len)
-		return (ft_strdup(s + start));
-	sub = (char *)malloc(len + 1);
-	if (!sub)
-		return (NULL);
-	while (i < len)
-		sub[i++] = s[start++];
-	sub[i] = '\0';
-	return (sub);
+	ft_memcpy(joinstr, s1, ft_strlen(s1));
+	ft_memcpy(joinstr + ft_strlen(s1), s2, ft_strlen(s2) + 1);
+	return (joinstr);
 }
