@@ -28,20 +28,31 @@ SRCS        =	ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 
 OBJS        = $(SRCS:.c=.o)
 
+BONUS_S     = ft_lstsize.c ft_lstnew.c ft_lstmap.c ft_lstiter.c ft_lstlast.c \
+            	ft_lstdelone.c ft_lstclear.c ft_lstadd_front.c ft_lstadd_back.c 
+
+BONUS_O =	$(BONUS_S:.c=.o)
+
 all:		$(NAME)
 
 $(NAME):    $(OBJS) $(INCLUDE)
 			ar -rcs $(NAME) $(OBJS)
 			ranlib  $(NAME)
 
+bonus:		$(NAME) $(BONUS_O)
+			ar -rcs $(NAME) $(BONUS_O)
+
 .c.o:
 			$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $(<:.c=.o)
 
 clean:
-			$(RM) $(OBJS)
+			$(RM) $(OBJS) $(BONUS_O)
 
 fclean:		clean
 			$(RM) $(NAME)
+
 re:			fclean all
 
-.PHONY:		all clean fclean re
+rebonus:	fclean bonus
+
+.PHONY:		all clean fclean re bonus rebonus
