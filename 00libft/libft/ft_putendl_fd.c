@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anunes-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/15 13:20:54 by anunes-d          #+#    #+#             */
-/*   Updated: 2021/03/15 14:38:37 by anunes-d         ###   ########.fr       */
+/*   Created: 2021/03/15 15:14:51 by anunes-d          #+#    #+#             */
+/*   Updated: 2021/03/15 15:16:23 by anunes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+void	ft_putendl_fd(char *s, int fd)
 {
-
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

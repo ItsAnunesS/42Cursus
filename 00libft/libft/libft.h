@@ -6,7 +6,7 @@
 /*   By: anunes-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 10:25:03 by anunes-d          #+#    #+#             */
-/*   Updated: 2021/03/12 18:43:01 by anunes-d         ###   ########.fr       */
+/*   Updated: 2021/03/15 15:06:39 by anunes-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_tolower(int c);
 int		ft_toupper(int c);
