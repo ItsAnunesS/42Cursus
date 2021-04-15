@@ -43,7 +43,7 @@ bonus:		$(NAME) $(BONUS_O)
 			ar -rcs $(NAME) $(BONUS_O)
 
 .c.o:
-			$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $(<:.c=.o)
+			$(CC) $(CFLAGS) -I $(INCLUDE) -c $< -o $(<:.c=.o)
 
 clean:
 			$(RM) $(OBJS) $(BONUS_O)
